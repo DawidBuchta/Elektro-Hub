@@ -40,8 +40,8 @@
                                                       
                                                         
                                                         
-                                                      {* {if (isset($user))}
-                                                           
+                                                       {if (isset($user))}
+                                                      
                                                            {if ($user["nazwa_roli"]=="Klient")}
                                                                <li> <a href="{$conf->action_url}Wyswietl_Koszyk" class= "Button primary icon solid alt fa-shopping-cart fa-1x">Koszyk</a></a></li>
                                                            <li> <a href="{$conf->action_url}OrderHistory" class= "button primary" >Historia Zamówień</a></li>
@@ -61,14 +61,14 @@
                                                                     {if ($user["nazwa_roli"]=="Marketing")}
                                                                     <li> <a href="{$conf->action_url}AddItemView" class= "button primary" >Dodaj Przedmiot</a></li>     
                                                                     {/if}
-                                                           
+                                                          
                                                            
                                                            {/if}
                                                            <li><a href="{$conf->action_url}logout" class="button primary">Wyloguj</a></li>
                                                        {else}
                                                         <li><a href="{$conf->action_url}Zarejestruj" class="button primary">Zarejestruj</a></li>  
 							<li><a href="{$conf->action_url}Login" class="button primary">Zaloguj</a></li>
-                                                        {/if}*}
+                                                        {/if}
                                                         
 						</ul>
 					</nav>

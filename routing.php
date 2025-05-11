@@ -9,7 +9,10 @@ $user = SessionUtils::loadObject('user',true);
              
 App::getRouter()->setDefaultRoute('Oferta'); #default action
 App::getRouter()->setLoginRoute('Login'); #action to forward if no permissions
+Utils::addRoute('Login', 'LoginCtrl'); //logowanie
+Utils::addRoute('logout', 'LoginCtrl'); // wylogowanie
 
+Utils::addRoute('Zarejestruj', 'RejestracjaCtrl'); //rejestracja
 
 
 Utils::addRoute('Oferta', 'ItemCtrl'); //wyswietlanie wszystkich przedmiotw w bazie
