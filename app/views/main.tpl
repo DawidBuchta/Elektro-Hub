@@ -55,8 +55,8 @@
                                                                     {/if}
 
                                                                     {if ($user["nazwa_roli"]=="Magazynier")}
-                                                                    <li> <a href="{$conf->action_url}adduser_view" class= "button primary" >Dodaj Użytkownika</a></li>
-                                                                    <li><a href="{$conf->action_url}wyswietl" class="button primary">Wyswietl użytkownikow</a></li>
+                                                                    <li> <a href="{$conf->action_url}OrderStatus_View" class= "button primary" >Status zamowien</a></li>
+                                                                    
                                                                     {/if}
                                                                     {if ($user["nazwa_roli"]=="Marketing")}
                                                                     <li> <a href="{$conf->action_url}AddItemView" class= "button primary" >Dodaj Przedmiot</a></li>     

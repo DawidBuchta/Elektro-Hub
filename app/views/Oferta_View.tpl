@@ -23,7 +23,7 @@
 
                                     {/if}
                                     {else}
-                                        {* <a href="{$conf->action_url}DodanoDoKoszykaOferta_View&id={$item["id_przedmiot"]}" class= "icon solid alt fa-cart-plus fa-2x center" ></a> *}
+                                         <a href="{$conf->action_url}DodanoDoKoszykaOferta_View&id={$item["id_przedmiot"]}" class= "icon solid alt fa-cart-plus fa-2x center" ></a> 
                                 {/if} 
                                  </a>
                                 <p  class="tekst-srodek">{$item["nazwa_producenta"]} {$item["nazwa"]}</p>

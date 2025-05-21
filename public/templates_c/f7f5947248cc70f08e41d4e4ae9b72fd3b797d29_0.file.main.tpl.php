@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.4, created on 2025-04-12 11:48:51
+/* Smarty version 4.3.4, created on 2025-05-21 18:15:43
   from 'C:\xampp\htdocs\Projekt_Systemu\Elektro-Hub\app\views\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.4',
-  'unifunc' => 'content_67fa3703b2e946_67893504',
+  'unifunc' => 'content_682dfc2f509080_74716537',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f7f5947248cc70f08e41d4e4ae9b72fd3b797d29' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Projekt_Systemu\\Elektro-Hub\\app\\views\\main.tpl',
-      1 => 1744449348,
+      1 => 1747844132,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_67fa3703b2e946_67893504 (Smarty_Internal_Template $_smarty_tpl) {
+function content_682dfc2f509080_74716537 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -67,7 +67,46 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 							                                                      
                                                         
                                                         
-                                                                                                              
+                                                       <?php if (((isset($_smarty_tpl->tpl_vars['user']->value)))) {?>
+                                                      
+                                                           <?php if (($_smarty_tpl->tpl_vars['user']->value["nazwa_roli"] == "Klient")) {?>
+                                                               <li> <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+Wyswietl_Koszyk" class= "Button primary icon solid alt fa-shopping-cart fa-1x">Koszyk</a></a></li>
+                                                           <li> <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+OrderHistory" class= "button primary" >Historia Zamówień</a></li>
+                                                            <?php } else { ?>
+                                                           
+                                                                    Rola: <?php echo $_smarty_tpl->tpl_vars['user']->value["nazwa_roli"];?>
+
+
+                                                                    <?php if (($_smarty_tpl->tpl_vars['user']->value["nazwa_roli"] == "Administrator")) {?>
+                                                                    <li> <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+adduser_view" class= "button primary" >Dodaj Użytkownika</a></li>
+                                                                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+wyswietl" class="button primary">Wyswietl użytkownikow</a></li>
+                                                                    <?php }?>
+
+                                                                    <?php if (($_smarty_tpl->tpl_vars['user']->value["nazwa_roli"] == "Magazynier")) {?>
+                                                                    <li> <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+OrderStatus_View" class= "button primary" >Status zamowien</a></li>
+                                                                    
+                                                                    <?php }?>
+                                                                    <?php if (($_smarty_tpl->tpl_vars['user']->value["nazwa_roli"] == "Marketing")) {?>
+                                                                    <li> <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+AddItemView" class= "button primary" >Dodaj Przedmiot</a></li>     
+                                                                    <?php }?>
+                                                          
+                                                           
+                                                           <?php }?>
+                                                           <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+logout" class="button primary">Wyloguj</a></li>
+                                                       <?php } else { ?>
+                                                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+Zarejestruj" class="button primary">Zarejestruj</a></li>  
+							<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+Login" class="button primary">Zaloguj</a></li>
+                                                        <?php }?>
+                                                        
 						</ul>
 					</nav>
 				</header>
@@ -83,16 +122,16 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 						</header>
 
                                                 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_91248934267fa3703b2bd88_65556378', "Wiadomosci_top");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_206548158682dfc2f506764_38545707', "Wiadomosci_top");
 ?>
 
                                                <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_205380881867fa3703b2ce76_25801655', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_316988905682dfc2f507620_86315068', "content");
 ?>
 
                                               
                                                <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_88554949867fa3703b2dcc4_90284371', "Wiadomosci");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1253758631682dfc2f508232_61803124', "Wiadomosci");
 ?>
 
                                                
@@ -146,12 +185,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_88554949867fa3703b
 </html>
 <?php }
 /* {block "Wiadomosci_top"} */
-class Block_91248934267fa3703b2bd88_65556378 extends Smarty_Internal_Block
+class Block_206548158682dfc2f506764_38545707 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'Wiadomosci_top' => 
   array (
-    0 => 'Block_91248934267fa3703b2bd88_65556378',
+    0 => 'Block_206548158682dfc2f506764_38545707',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -161,12 +200,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "Wiadomosci_top"} */
 /* {block "content"} */
-class Block_205380881867fa3703b2ce76_25801655 extends Smarty_Internal_Block
+class Block_316988905682dfc2f507620_86315068 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_205380881867fa3703b2ce76_25801655',
+    0 => 'Block_316988905682dfc2f507620_86315068',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -176,12 +215,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "content"} */
 /* {block "Wiadomosci"} */
-class Block_88554949867fa3703b2dcc4_90284371 extends Smarty_Internal_Block
+class Block_1253758631682dfc2f508232_61803124 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'Wiadomosci' => 
   array (
-    0 => 'Block_88554949867fa3703b2dcc4_90284371',
+    0 => 'Block_1253758631682dfc2f508232_61803124',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

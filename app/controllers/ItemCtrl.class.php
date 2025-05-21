@@ -32,7 +32,7 @@ class ItemCtrl {
             
         }
         
-        function getParamsItem(){
+        function getParamsLogin(){
           $this->form->Nazwa = ParamUtils::getFromRequest('nazwa');
           $this->form->Opis = ParamUtils::getFromRequest('opis');
           $this->form->Cena = ParamUtils::getFromRequest('cena');
@@ -109,7 +109,7 @@ class ItemCtrl {
    
    function validateParams(){
  
-        $this->getParamsItem();
+        $this->getParamsLogin();
         
         
             // sprawdzenie, czy parametry zostały przekazane sytuacja wystąpi kiedy np. kontroler zostanie wywołany bezpośrednio - nie z formularza    
@@ -210,10 +210,51 @@ class ItemCtrl {
     
    }
     
-
-  
+   function RemoveItem()
+   {
+       $item_id=$_GET["id"];
+       
+       $czy_wykorzystane=App::getDB()->has("przedmiot_koszyk",[
+           
+           "id_przedmiot"=>$item_id
+       ]);
+       if($czy_wykorzystane)
+           App::getMessages()->addMessage(new \core\Message("Produktu nie można usunąć ponieważ ktoś go zamówił", \core\Message::ERROR));
+       else{
+       App::getDB()->delete("atrybut_przedmiot",["id_spec"=>$item_id]);
+       App::getDB()->delete("przedmioty",["id_przedmiot"=>$item_id]);
+       App::getMessages()->addMessage(new \core\Message("Poprawnie usunieto produkt", \core\Message::INFO));
+       }
+       
+       
+       
+   }
+      
+    public function action_AddItemView(){
+        
+        
+        $this->setParams(); 
+        
+        if($this->validateParams())
+        {
+            App::getMessages()->addMessage(new \core\Message("Poprawnie dodany produkt", \core\Message::INFO));
+        }
+         App::getSmarty()->assign("form",$this->form);
+               App::getSmarty()->display("AddItem_View.tpl");
+        
+    }
     
     
-   
+    public function action_RemoveItem()
+    {
+        
+        
+        $this->RemoveItem();
+        
+        $this->action_Oferta();
+        
+    }
+    
+    
     
 }
